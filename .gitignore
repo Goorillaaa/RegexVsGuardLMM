@@ -1,0 +1,28 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# --- Jupyter / Colab ---
+.ipynb_checkpoints/
+
+# --- Data and checkpoints (live on Google Drive, not in git) ---
+data/
+defense_llm/checkpoints/
+*.ckpt
+*.safetensors
+*.bin
+
+# Exception: if the source CSV is small and you want to version it,
+# uncomment the line below (applies ONLY to the source, never to derived splits)
+# !data/dataset.csv
+
+# --- Temporary outputs ---
+report/figures/*.tmp
+*.log
+
+# --- OS ---
+.DS_Store
+Thumbs.db
