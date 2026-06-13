@@ -1,0 +1,20 @@
+# monta Drive (per dati e checkpoint)
+from google.colab import drive
+drive.mount('/content/drive')
+ 
+# clona la repo (sostituisci con la tua)
+!git clone https://github.com/TUO_UTENTE/guardrail-comparison.git
+%cd guardrail-comparison
+!pip install -q -r requirements.txt
+
+
+import pandas as pd
+from common.utils import file_hash
+ 
+CSV_PATH = "/content/drive/MyDrive/guardrail-data/dataset.csv"  # adatta il path
+df = pd.read_csv(CSV_PATH)
+ 
+print("righe:", len(df))
+print("hash sha256:", file_hash(CSV_PATH))
+print("\ncolonne:", list(df.columns))
+df.head()
