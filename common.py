@@ -86,8 +86,13 @@ def load_dataset_csv(path: str) -> pd.DataFrame:
 # 4) SCHEMA DEL TEST SET GENERATO
 # ============================================================
 TEST_SET_FIELDS = {
-    "id": str, "response_text": str, "ground_truth": str,
-    "source": str, "category": str, "obfuscation_level": int, "origin": str,
+    "id": str,                # identificativo univoco          
+    "response_text": str,     # la risposta del modello da classificare
+    "ground_truth": str,      # "safe" | "unsafe"
+    "source": str,            # modello che l'ha generata, o "csv"
+    "category": str,          # categoria di rischio (es. "economic_harm") 
+    "obfuscation_level": int, # 0=esplicito ... 3=molto offuscato 
+    "origin": str,            # "generated" | "csv"
 }
 VALID_VERDICTS = {"safe", "unsafe"}
 
