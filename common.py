@@ -72,7 +72,7 @@ CSV_COLUMN_MAP = {
 
 def load_dataset_csv(path: str) -> pd.DataFrame:
     """Legge il CSV dell'articolo e normalizza nomi colonne + etichetta."""
-    df = pd.read_csv(path)
+    df = pd.read_csv(path, encoding='latin1')
     df = df.rename(columns=CSV_COLUMN_MAP)
     # etichetta: la colonna Human e' l'annotazione umana di dannosita'
     # 1 -> unsafe, 0 -> safe   (VERIFICA questa semantica sul paper!)
